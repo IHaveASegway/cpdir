@@ -35,7 +35,7 @@ cpdir /path/to/directory
 cpdir -d 2 /path/to/directory
 # Copy directory structure and file contents to clipboard with ignore patterns
 cpdir -i "*.tmp" -i "node_modules" /path/to/directory
-# Copy only specific file types to clipboard
+# Or just copy specific files
 cpdir file1.py file2.sql
 ```
 
