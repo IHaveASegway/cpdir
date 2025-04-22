@@ -1,4 +1,4 @@
-# cpdr - Directory Contents to Clipboard
+# cpdir - Directory Contents to Clipboard
 
 A command-line tool that copies directory structures and file contents to the clipboard.
 
