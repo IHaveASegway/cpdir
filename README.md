@@ -18,32 +18,10 @@ A command-line tool that copies directory structures and file contents to the cl
 - Git
 
 ## Installation Steps
-```bash
-brew install go
-```
 
 ```bash
-# Clone the repository
-git clone https://github.com/yourusername/cpdr.git
-cd cpdr
-```
-
-### Set local cpdr executable
-
-```bash
-export cpdr="$(pwd)/cpdr"
-```
-
-### Add alias to your shell configuration
-
-```bash
-echo "alias cpdrtest='$(pwd)/cpdr'" >> ~/.zshrc
-```
-
-### Activate the alias
-
-```bash
-source ~/.zshrc
+brew tap IHaveASegway/cpdir
+brew install cpdir
 ```
 
 ## Example Usage
@@ -57,4 +35,48 @@ cpdr /path/to/directory
 cpdr -d 2 /path/to/directory
 # Copy directory structure and file contents to clipboard with ignore patterns
 cpdr -i "*.tmp" -i "node_modules" /path/to/directory
+# Copy only specific file types to clipboard
+cpdir file1.py file2.sql
+```
+
+### Running `cpdir . -i .*` Example Output:
+```
+
+Directory Trees:
+==================================================
+
+Tree for /Documents/GitHub/homebrew-cpdir:
+└── homebrew-cpdir/
+    └── Formula/
+        └── cpdir.rb
+
+--------------------------------------------------
+
+==================================================
+
+File: /Documents/GitHub/homebrew-cpdir/Formula/cpdir.rb
+--------------------------------------------------
+# Documentation: https://docs.brew.sh/Formula-Cookbook
+#                https://rubydoc.brew.sh/Formula
+# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
+class Cpdir < Formula
+    desc "Copy specific files and the directory structure to the clipboard"
+    homepage "https://github.com/IHaveASegway/cpdir"
+    url "https://github.com/IHaveASegway/cpdir/archive/refs/tags/v1.0.0.tar.gz"
+    sha256 "aasdfwfefrftwg5ter5t3qwq"
+    license "MIT"
+  
+    depends_on "go" => :build
+  
+    def install
+      system "go", "build", "-o", bin/"cpdir", "."
+    end
+  
+    test do
+      assert_match "Usage", shell_output("#{bin}/cpdir --help")
+    end
+  end
+  
+
+==================================================
 ```
