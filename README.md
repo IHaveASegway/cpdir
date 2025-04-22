@@ -14,8 +14,7 @@ A command-line tool that copies directory structures and file contents to the cl
 
 ### Prerequisites
 
-- Go 1.16 or higher (install from [golang.org/dl](https://golang.org/dl/) if needed)
-- Git
+- brew
 
 ## Installation Steps
 
