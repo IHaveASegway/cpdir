@@ -27,13 +27,13 @@ brew install cpdir
 
 ```bash
 # Copy directory structure to clipboard
-cpdr -s /path/to/directory
+cpdir -s /path/to/directory
 # Copy directory structure and file contents to clipboard
-cpdr /path/to/directory
+cpdir /path/to/directory
 # Copy directory structure and file contents to clipboard with depth 2
-cpdr -d 2 /path/to/directory
+cpdir -d 2 /path/to/directory
 # Copy directory structure and file contents to clipboard with ignore patterns
-cpdr -i "*.tmp" -i "node_modules" /path/to/directory
+cpdir -i "*.tmp" -i "node_modules" /path/to/directory
 # Copy only specific file types to clipboard
 cpdir file1.py file2.sql
 ```
