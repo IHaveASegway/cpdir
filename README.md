@@ -40,8 +40,8 @@ cpdir file1.py file2.sql
 ```
 
 ### Running `cpdir . -i .*` Example Output:
-```
 
+```text
 Directory Trees:
 ==================================================
 
