@@ -26,6 +26,7 @@ brew install cpdir
 ## Example Usage
 
 ```bash
+# Need some help?
 cpdir -h
 # Copy directory structure to clipboard
 cpdir -s /path/to/directory
