@@ -40,7 +40,7 @@ cpdir -i "*.tmp" -i "node_modules" /path/to/directory
 cpdir file1.py file2.sql
 ```
 
-### Running `cpdir . -i .*` Example Output:
+### Running `cpdir . -i ".*"` Example Output:
 
 ```text
 Directory Trees:

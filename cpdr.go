@@ -23,10 +23,39 @@ func shouldIgnore(path string, ignorePatterns []string) bool {
 	// Get path components for directory structure matching
 	pathComponents := strings.Split(filepath.ToSlash(path), "/")
 	dirname := filepath.Base(path)
+	filename := filepath.Base(path)
 
 	for _, pattern := range allIgnore {
 		if pattern == "" {
 			continue
+		}
+
+		// Handle wildcard patterns
+		if strings.Contains(pattern, "*") {
+			// Handle wildcard at start (e.g., ".*" to match all hidden files/dirs)
+			if strings.HasPrefix(pattern, ".*") {
+				if strings.HasPrefix(filename, ".") {
+					return true
+				}
+			}
+
+			// Additional wildcard handling - match beginning of filename
+			if strings.HasPrefix(pattern, "*") && strings.HasSuffix(filename, pattern[1:]) {
+				return true
+			}
+
+			// Match end of filename
+			if strings.HasSuffix(pattern, "*") && strings.HasPrefix(filename, pattern[:len(pattern)-1]) {
+				return true
+			}
+
+			// Match pattern in the middle
+			if strings.HasPrefix(pattern, "*") && strings.HasSuffix(pattern, "*") {
+				middle := pattern[1 : len(pattern)-1]
+				if strings.Contains(filename, middle) {
+					return true
+				}
+			}
 		}
 
 		// Check for exact directory name matches (directory structure)
