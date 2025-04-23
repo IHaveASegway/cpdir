@@ -5,7 +5,7 @@ class Cpdir < Formula
     desc "Copy specific files and the directory structure to the clipboard"
     homepage "https://github.com/IHaveASegway/cpdir"
     url "https://github.com/IHaveASegway/cpdir/archive/refs/tags/v1.0.2.tar.gz"
-    sha256 "e2410bd634ccc67fee71cc4bcd437c3267dd653bda3df90b4b1f3b1fc526037c"
+    sha256 "f1a5008bf87d1c5249ec6542fdf39be227161751f1486ac8de63ba0162f1b11d"
     license "MIT"
   
     depends_on "go" => :build
